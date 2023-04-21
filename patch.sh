@@ -15,7 +15,7 @@ declare -A binhash_version_list=(
     ["ec0c3f5bbb857fa84f5d1153545d30d7b408520b"]="6.1-15047-0_6.1.1-15101-4"
     ["1473d6ad6ff6e5b8419c6b0bc41006b72fd777dd"]="6.1.2-15132-0_6.1.3-15152-8"
     ["26e42e43b393811c176dac651efc5d61e4569305"]="6.1.4-15217-0_6.2-23739-2"
-    ["1d01ee38211f21c67a4311f90315568b3fa530e6"]="6.2.1-23824-0_6.2.3-25426-3"
+    ["1d01ee38211f21c67a4311f90315568b3fa530e6"]="6.2.1-23824-0_6.2.4-25556-6"
     ["c2f07f4cebf0bfb63e3ca38f811fd5b6112a797e"]="7.0.1-42216-0_7.0.1-42218-3"
     ["796ac7fab2dcad7978a0e8ae48abc9150aba916c"]="7.1-42661-0_7.1-42661-0"
     ["22445f5b0d8b6714954b50930c47b8805cf32b98"]="7.1-42661-0_7.1-42661-0"
@@ -155,6 +155,13 @@ declare -a versions_list=(
     "6.2.3 25426-0"
     "6.2.3 25426-2"
     "6.2.3 25426-3"
+    "6.2.4 25556-0"
+    "6.2.4 25556-1"
+    "6.2.4 25556-2"
+    "6.2.4 25556-3"
+    "6.2.4 25556-4"
+    "6.2.4 25556-5"
+    "6.2.4 25556-6"
     "7.0.1 42218-0"
     "7.0.1 42218-1"
     "7.0.1 42218-2"
@@ -352,11 +359,11 @@ rollback () {
                     echo "Backup restored successfully (DSM ${binhash_version_list[$backup_hash]})"
                     exit 0
                 else
-                    echo "No valid backup found for patched synocodectool currently in use. You can download the original file for DSM ${binhash_version_list[$original_hash]}  from https://github.com/stl88083365/synocodectool-patch/."
+                    echo "No valid backup found for patched synocodectool currently in use. You can download the original file for DSM ${binhash_version_list[$original_hash]}  from https://github.com/noir1216/synocodectool-patch/."
                     exit 1
                 fi
         else
-            echo "No backups found for patched synocodectool currently in use. You can download the original file for DSM ${binhash_version_list[$original_hash]}  from https://github.com/stl88083365/synocodectool-patch/."
+            echo "No backups found for patched synocodectool currently in use. You can download the original file for DSM ${binhash_version_list[$original_hash]}  from https://github.com/noir1216/synocodectool-patch/."
             exit 1
         fi
     elif [[ "${binhash_version_list[$synocodectool_hash]+isset}" ]]; then
@@ -375,11 +382,11 @@ rollback () {
                 echo "Backup restored successfully (DSM ${binhash_version_list[$backup_hash]})"
                 exit 0
             else
-                echo "Not a valid backup. You can either try restoring another backup or download the original file for DSM $dsm_version from https://github.com/stl88083365/synocodectool-patch/."
+                echo "Not a valid backup. You can either try restoring another backup or download the original file for DSM $dsm_version from https://github.com/noir1216/synocodectool-patch/."
                 exit 1
             fi
         else
-            echo "No backups found. You can download the original file for DSM $dsm_version from https://github.com/stl88083365/synocodectool-patch/."
+            echo "No backups found. You can download the original file for DSM $dsm_version from https://github.com/noir1216/synocodectool-patch/."
             exit 1
         fi
     fi        
